@@ -1,0 +1,22 @@
+[project]
+name = "pose-utility"
+version = "0.1.0"
+description = "A Python package for pose presentation base on scipy and numpy"
+readme = "README.md"
+authors = [
+    { name = "tonyddg", email = "799052200@qq.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "scipy",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.7,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "scipy-stubs[scipy]",
+]
