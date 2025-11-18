@@ -1,4 +1,5 @@
 from .pose_utility import Pose
+from .camera_visualize import CameraVisualize
 
 if __name__ == "__main__":
     import numpy as np

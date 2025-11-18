@@ -4,29 +4,6 @@ import numpy as np
 from scipy.spatial.transform import Rotation as R
 from dataclasses import field, dataclass
 
-# def is_3d_pts(
-#     pts: np.ndarray
-# ):
-#     return (len(pts.shape) == 2) and (pts.shape[0] == 3)
-
-# def assert_3d_pts(
-#     pts: np.ndarray
-# ):
-#     assert is_3d_pts(pts), f"数组形状 {pts.shape} 不是合法的三维点"
-
-# def pts_to_homo(
-#         pts: np.ndarray
-#     ):
-#     '''
-#     将三维的点坐标转为齐次坐标
-    
-#     @pts: (N,3 or 2) will homogeneliaze the last dimension
-#     '''
-#     assert_3d_pts(pts)
-
-#     homo = np.concat((pts, np.ones((1, pts.shape[1]))), axis = 0)
-#     return homo
-
 @dataclass
 class Pose:
     position: np.ndarray # 位置
