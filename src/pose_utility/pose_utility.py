@@ -34,15 +34,8 @@ class Pose:
         self,
     ):
         if self._Pose_inv is None:
-            T_origin = self.calc_T()
-            R_inv = T_origin[:3, :3].T
-            p_inv = - np.linalg.matmul(R_inv, T_origin[:3, 3])
-            
-            T_inv = np.identity(4)
-            T_inv[:3, :3] = R_inv
-            T_inv[:3, 3] = p_inv
-
-            self._Pose_inv = self.from_T(T_inv)
+            # 测试结果表明相比使用齐次矩阵的求逆公式，直接求逆结果准确度更高
+            self._Pose_inv = self.from_T(np.linalg.inv(self.calc_T()))
             self._Pose_inv._Pose_inv = self
         return self._Pose_inv
 
